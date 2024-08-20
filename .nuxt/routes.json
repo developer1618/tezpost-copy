@@ -1,0 +1,464 @@
+[
+  {
+    "name": "boxes",
+    "path": "/boxes",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\boxes\\\\index.vue",
+    "chunkName": "pages/boxes/index",
+    "_name": "_6e65dbfe"
+  },
+  {
+    "name": "deliveries",
+    "path": "/deliveries",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\deliveries\\\\index.vue",
+    "chunkName": "pages/deliveries/index",
+    "_name": "_0945d1a8"
+  },
+  {
+    "name": "directions",
+    "path": "/directions",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\directions\\\\index.vue",
+    "chunkName": "pages/directions/index",
+    "_name": "_278bab26"
+  },
+  {
+    "name": "employees",
+    "path": "/employees",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employees\\\\index.vue",
+    "chunkName": "pages/employees/index",
+    "_name": "_00a796b5"
+  },
+  {
+    "name": "employer_balance_histories",
+    "path": "/employer_balance_histories",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employer_balance_histories\\\\index.vue",
+    "chunkName": "pages/employer_balance_histories/index",
+    "_name": "_ae3284e2"
+  },
+  {
+    "name": "kanban",
+    "path": "/kanban",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\kanban.vue",
+    "chunkName": "pages/kanban",
+    "_name": "_24c0eebf"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\login\\\\index.vue",
+    "chunkName": "pages/login/index",
+    "_name": "_2c593851"
+  },
+  {
+    "name": "orders",
+    "path": "/orders",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\orders\\\\index.vue",
+    "chunkName": "pages/orders/index",
+    "_name": "_3bd43475"
+  },
+  {
+    "name": "payments",
+    "path": "/payments",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\payments\\\\index.vue",
+    "chunkName": "pages/payments/index",
+    "_name": "_212a672d"
+  },
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\posts\\\\index.vue",
+    "chunkName": "pages/posts/index",
+    "_name": "_a1c0b4b2"
+  },
+  {
+    "name": "reception",
+    "path": "/reception",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\reception\\\\index.vue",
+    "chunkName": "pages/reception/index",
+    "_name": "_0e3655aa"
+  },
+  {
+    "name": "roles",
+    "path": "/roles",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\roles\\\\index.vue",
+    "chunkName": "pages/roles/index",
+    "_name": "_4b857c7d"
+  },
+  {
+    "name": "sends",
+    "path": "/sends",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\sends\\\\index.vue",
+    "chunkName": "pages/sends/index",
+    "_name": "_7fbdc08f"
+  },
+  {
+    "name": "shippings",
+    "path": "/shippings",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\shippings\\\\index.vue",
+    "chunkName": "pages/shippings/index",
+    "_name": "_c8f5e496"
+  },
+  {
+    "name": "statuses",
+    "path": "/statuses",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\statuses\\\\index.vue",
+    "chunkName": "pages/statuses/index",
+    "_name": "_6d286f4c"
+  },
+  {
+    "name": "top_questions",
+    "path": "/top_questions",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\top_questions\\\\index.vue",
+    "chunkName": "pages/top_questions/index",
+    "_name": "_d837ded2"
+  },
+  {
+    "name": "users",
+    "path": "/users",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\users\\\\index.vue",
+    "chunkName": "pages/users/index",
+    "_name": "_473f9052"
+  },
+  {
+    "name": "boxes-create",
+    "path": "/boxes/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\boxes\\\\create.vue",
+    "chunkName": "pages/boxes/create",
+    "_name": "_788978dd"
+  },
+  {
+    "name": "cashbox-expense",
+    "path": "/cashbox/expense",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\expense\\\\index.vue",
+    "chunkName": "pages/cashbox/expense/index",
+    "_name": "_1240b65a"
+  },
+  {
+    "name": "cashbox-receipt",
+    "path": "/cashbox/receipt",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\receipt\\\\index.vue",
+    "chunkName": "pages/cashbox/receipt/index",
+    "_name": "_499fbf0c"
+  },
+  {
+    "name": "cashbox-residue",
+    "path": "/cashbox/residue",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\residue\\\\index.vue",
+    "chunkName": "pages/cashbox/residue/index",
+    "_name": "_278d2747"
+  },
+  {
+    "name": "directions-create",
+    "path": "/directions/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\directions\\\\create.vue",
+    "chunkName": "pages/directions/create",
+    "_name": "_1cc3f750"
+  },
+  {
+    "name": "employees-create",
+    "path": "/employees/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employees\\\\create.vue",
+    "chunkName": "pages/employees/create",
+    "_name": "_3bff8aa9"
+  },
+  {
+    "name": "employer_balance_histories-create",
+    "path": "/employer_balance_histories/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employer_balance_histories\\\\create.vue",
+    "chunkName": "pages/employer_balance_histories/create",
+    "_name": "_c8b581e2"
+  },
+  {
+    "name": "extras-user-profile",
+    "path": "/extras/user-profile",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\extras\\\\user-profile.vue",
+    "chunkName": "pages/extras/user-profile",
+    "_name": "_563d6852"
+  },
+  {
+    "name": "orders-create",
+    "path": "/orders/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\orders\\\\create.vue",
+    "chunkName": "pages/orders/create",
+    "_name": "_6666a4e9"
+  },
+  {
+    "name": "payments-create",
+    "path": "/payments/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\payments\\\\create.vue",
+    "chunkName": "pages/payments/create",
+    "_name": "_2bd6c931"
+  },
+  {
+    "name": "posts-create",
+    "path": "/posts/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\posts\\\\create.vue",
+    "chunkName": "pages/posts/create",
+    "_name": "_5c8959f7"
+  },
+  {
+    "name": "reception-create",
+    "path": "/reception/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\reception\\\\create.vue",
+    "chunkName": "pages/reception/create",
+    "_name": "_4b6a1af3"
+  },
+  {
+    "name": "returns-boxes",
+    "path": "/returns/boxes",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\returns\\\\boxes\\\\index.vue",
+    "chunkName": "pages/returns/boxes/index",
+    "_name": "_3bba8124"
+  },
+  {
+    "name": "returns-orders",
+    "path": "/returns/orders",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\returns\\\\orders\\\\index.vue",
+    "chunkName": "pages/returns/orders/index",
+    "_name": "_2694a9b2"
+  },
+  {
+    "name": "roles-create",
+    "path": "/roles/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\roles\\\\create.vue",
+    "chunkName": "pages/roles/create",
+    "_name": "_4cde5de1"
+  },
+  {
+    "name": "sends-create",
+    "path": "/sends/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\sends\\\\create.vue",
+    "chunkName": "pages/sends/create",
+    "_name": "_c0a2c7e2"
+  },
+  {
+    "name": "shippings-create",
+    "path": "/shippings/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\shippings\\\\create.vue",
+    "chunkName": "pages/shippings/create",
+    "_name": "_065e18ae"
+  },
+  {
+    "name": "statuses-create",
+    "path": "/statuses/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\statuses\\\\create.vue",
+    "chunkName": "pages/statuses/create",
+    "_name": "_e87ce4b8"
+  },
+  {
+    "name": "top_questions-create",
+    "path": "/top_questions/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\top_questions\\\\create.vue",
+    "chunkName": "pages/top_questions/create",
+    "_name": "_10524d07"
+  },
+  {
+    "name": "users-create",
+    "path": "/users/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\users\\\\create.vue",
+    "chunkName": "pages/users/create",
+    "_name": "_6f3276a8"
+  },
+  {
+    "name": "warehouse-reception",
+    "path": "/warehouse/reception",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\warehouse\\\\reception.vue",
+    "chunkName": "pages/warehouse/reception",
+    "_name": "_267039b4"
+  },
+  {
+    "name": "warehouse-residue",
+    "path": "/warehouse/residue",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\warehouse\\\\residue.vue",
+    "chunkName": "pages/warehouse/residue",
+    "_name": "_1f2ed4a0"
+  },
+  {
+    "name": "warehouse-shipped",
+    "path": "/warehouse/shipped",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\warehouse\\\\shipped.vue",
+    "chunkName": "pages/warehouse/shipped",
+    "_name": "_63d6b510"
+  },
+  {
+    "name": "returns-boxes-create",
+    "path": "/returns/boxes/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\returns\\\\boxes\\\\create.vue",
+    "chunkName": "pages/returns/boxes/create",
+    "_name": "_6349ee1a"
+  },
+  {
+    "name": "returns-orders-create",
+    "path": "/returns/orders/create",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\returns\\\\orders\\\\create.vue",
+    "chunkName": "pages/returns/orders/create",
+    "_name": "_58965168"
+  },
+  {
+    "name": "cashbox-expense-daily-id",
+    "path": "/cashbox/expense/daily/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\expense\\\\daily\\\\_id.vue",
+    "chunkName": "pages/cashbox/expense/daily/_id",
+    "_name": "_7f29e82e"
+  },
+  {
+    "name": "cashbox-expense-monthly-id",
+    "path": "/cashbox/expense/monthly/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\expense\\\\monthly\\\\_id.vue",
+    "chunkName": "pages/cashbox/expense/monthly/_id",
+    "_name": "_51e9ef16"
+  },
+  {
+    "name": "cashbox-receipt-daily-id",
+    "path": "/cashbox/receipt/daily/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\receipt\\\\daily\\\\_id.vue",
+    "chunkName": "pages/cashbox/receipt/daily/_id",
+    "_name": "_4d28f5c9"
+  },
+  {
+    "name": "cashbox-receipt-monthly-id",
+    "path": "/cashbox/receipt/monthly/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\receipt\\\\monthly\\\\_id.vue",
+    "chunkName": "pages/cashbox/receipt/monthly/_id",
+    "_name": "_2bf5fa55"
+  },
+  {
+    "name": "boxes-edit-id",
+    "path": "/boxes/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\boxes\\\\edit\\\\_id.vue",
+    "chunkName": "pages/boxes/edit/_id",
+    "_name": "_67a3c51f"
+  },
+  {
+    "name": "cashbox-residue-id",
+    "path": "/cashbox/residue/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\cashbox\\\\residue\\\\_id.vue",
+    "chunkName": "pages/cashbox/residue/_id",
+    "_name": "_4cfa4f6f"
+  },
+  {
+    "name": "directions-edit-id",
+    "path": "/directions/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\directions\\\\edit\\\\_id.vue",
+    "chunkName": "pages/directions/edit/_id",
+    "_name": "_b5117878"
+  },
+  {
+    "name": "employees-edit-id",
+    "path": "/employees/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employees\\\\edit\\\\_id.vue",
+    "chunkName": "pages/employees/edit/_id",
+    "_name": "_7084cfd3"
+  },
+  {
+    "name": "orders-edit-id",
+    "path": "/orders/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\orders\\\\edit\\\\_id.vue",
+    "chunkName": "pages/orders/edit/_id",
+    "_name": "_36a6e4da"
+  },
+  {
+    "name": "posts-edit-id",
+    "path": "/posts/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\posts\\\\edit\\\\_id.vue",
+    "chunkName": "pages/posts/edit/_id",
+    "_name": "_14cfd476"
+  },
+  {
+    "name": "roles-edit-id",
+    "path": "/roles/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\roles\\\\edit\\\\_id.vue",
+    "chunkName": "pages/roles/edit/_id",
+    "_name": "_aa2adcca"
+  },
+  {
+    "name": "sends-edit-id",
+    "path": "/sends/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\sends\\\\edit\\\\_id.vue",
+    "chunkName": "pages/sends/edit/_id",
+    "_name": "_7b4306a6"
+  },
+  {
+    "name": "shippings-edit-id",
+    "path": "/shippings/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\shippings\\\\edit\\\\_id.vue",
+    "chunkName": "pages/shippings/edit/_id",
+    "_name": "_3c62725a"
+  },
+  {
+    "name": "statuses-edit-id",
+    "path": "/statuses/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\statuses\\\\edit\\\\_id.vue",
+    "chunkName": "pages/statuses/edit/_id",
+    "_name": "_1a44b210"
+  },
+  {
+    "name": "top_questions-edit-id",
+    "path": "/top_questions/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\top_questions\\\\edit\\\\_id.vue",
+    "chunkName": "pages/top_questions/edit/_id",
+    "_name": "_8964ee96"
+  },
+  {
+    "name": "users-edit-id",
+    "path": "/users/edit/:id?",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\users\\\\edit\\\\_id.vue",
+    "chunkName": "pages/users/edit/_id",
+    "_name": "_511cb2f0"
+  },
+  {
+    "name": "boxes-id",
+    "path": "/boxes/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\boxes\\\\_id.vue",
+    "chunkName": "pages/boxes/_id",
+    "_name": "_b66cbeae"
+  },
+  {
+    "name": "deliveries-id",
+    "path": "/deliveries/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\deliveries\\\\_id.vue",
+    "chunkName": "pages/deliveries/_id",
+    "_name": "_23ec1e10"
+  },
+  {
+    "name": "employees-id",
+    "path": "/employees/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employees\\\\_id.vue",
+    "chunkName": "pages/employees/_id",
+    "_name": "_0325c25d"
+  },
+  {
+    "name": "employer_balance_histories-id",
+    "path": "/employer_balance_histories/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\employer_balance_histories\\\\_id.vue",
+    "chunkName": "pages/employer_balance_histories/_id",
+    "_name": "_4a565092"
+  },
+  {
+    "name": "orders-id",
+    "path": "/orders/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\orders\\\\_id.vue",
+    "chunkName": "pages/orders/_id",
+    "_name": "_af425fc6"
+  },
+  {
+    "name": "payments-id",
+    "path": "/payments/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\payments\\\\_id.vue",
+    "chunkName": "pages/payments/_id",
+    "_name": "_66db5e56"
+  },
+  {
+    "name": "sends-id",
+    "path": "/sends/:id",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\sends\\\\_id.vue",
+    "chunkName": "pages/sends/_id",
+    "_name": "_71909ab7"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\LIVO Projects\\\\TezPost\\\\tezpost-front\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_7c6cd80c"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "DButton": {
+    "description": "Auto imported from components/DButton.vue"
+  },
+  "KanbanBadge": {
+    "description": "Auto imported from components/kanban/Badge.vue"
+  },
+  "KanbanTaskCard": {
+    "description": "Auto imported from components/kanban/TaskCard.vue"
+  },
+  "TablesBoxes": {
+    "description": "Auto imported from components/Tables/Boxes.vue"
+  },
+  "TablesCashbox": {
+    "description": "Auto imported from components/Tables/Cashbox.vue"
+  },
+  "TablesOrders": {
+    "description": "Auto imported from components/Tables/Orders.vue"
+  },
+  "TablesPayments": {
+    "description": "Auto imported from components/Tables/Payments.vue"
+  },
+  "TablesReception": {
+    "description": "Auto imported from components/Tables/Reception.vue"
+  },
+  "TablesSends": {
+    "description": "Auto imported from components/Tables/Sends.vue"
+  },
+  "TicketsBoxes": {
+    "description": "Auto imported from components/Tickets/Boxes.vue"
+  },
+  "TicketsOrders": {
+    "description": "Auto imported from components/Tickets/Orders.vue"
+  }
+}
