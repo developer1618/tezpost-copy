@@ -100,8 +100,18 @@
                 classList="rounded bg-bo-primary text-center text-white py-3 px-7 mt-3 w-full md:w-max hover:bg-bo-primary"
               />
             </div>
+            <modal name="missing-orders-modal" height="auto">
+              <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены!</h2>
+              <p>Отсутствующие заказы:</p>
+              <ul>
+                <li v-for="order in missingOrders" :key="order.id" class="text-red-600 font-semibold">
+                  {{ order.track_code }}
+                </li>
+              </ul>
+              <Reception />
+              <button @click="$modal.hide('missing-orders-modal')" class="mt-4 d-btn d-btn-primary">Закрыть</button>
+            </modal>
           </div>
-          
         </form>
       </div>
     </div>
@@ -112,21 +122,32 @@
     </div>
     <TablesBoxes :boxes="dump_boxes" :loading="loading" :isAction="isAction" />
   </div>
+  
 </template>
 
 <script>
 import Multiselect from "vue-multiselect";
+import Vue from 'vue';
+import VModal from 'vue-js-modal';
+import Reception from '@/components/Tables/Reception.vue'; // Verify this path
+
+Vue.use(VModal, {
+  dynamicDefaults: {
+    draggable: true,
+    resizable: true,
+  },
+});
 
 export default {
   components: {
     Multiselect,
+    Reception, // Register the Reception component
   },
 
   data() {
     return {
       reception: {
         name: "",
-        // status: '',
         status_id: 10,
         boxes: [],
         orders: [],
@@ -138,16 +159,20 @@ export default {
       disabled: false,
       boxes: [],
       orders: [],
+      missingOrders: [],
     };
   },
+
   computed: {
     hasBoxes() {
       return this.$store.state.dummy.create_boxes;
     },
   },
+
   mounted() {
     this.init();
   },
+
   methods: {
     init() {
       if (this.hasBoxes.length != 0) {
@@ -164,6 +189,7 @@ export default {
           this.boxes = res.data.boxes;
         });
     },
+    
     save() {
       if (this.reception.status) {
         this.reception.status_id = this.reception.status.id;
@@ -188,23 +214,19 @@ export default {
           });
         })
         .catch((err) => {
-          const missingOrders = err.response.data.missing_orders.map(order => order.track_code).join(", ");
-          this.$swal({
-            icon: "erros",
-            title: "Не все заказы найдены в коробке!",
-            html: `Отсутствующие заказы: <span style="color: red; font-weight: bold;">${missingOrders}</span>`,
-            // timer: 3000,
-            timerProgressBar: true,
-          });
+          this.missingOrders = err.response.data.missing_orders;
+          this.$modal.show('missing-orders-modal');
         });
     },
+    
     selectBoxes(value) {
-      value[0].orders.forEach ((item) => {
-        this.orders.push(item)
+      value[0].orders.forEach((item) => {
+        this.orders.push(item);
       });
       this.$store.commit("dummy/SET_CREATE_BOXES", this.dump_boxes);
       this.reception.boxes = this.dump_boxes.map((o) => o.id);
     },
+    
     selectOrders(value) {
       this.reception.orders = value.map(order => {
         return {
