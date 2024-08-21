@@ -7,7 +7,7 @@
             Добавить | 添加
           </h2>
           <span class="text-gray-800"
-            >Ура ваши товары прибыли так добавить их в Склад. |
+            >Ваши товары прибыли так добавить их в Склад. |
             万岁，您的货物已到达，请将它们添加到仓库。</span
           >
         </div>
@@ -102,7 +102,7 @@
             </div>
             <modal name="missing-orders-modal" height="auto" width="800">
               <div class="p-8">
-                <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены!</h2>
+                <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены в коробке!</h2>
                 <p>Отсутствующие заказы:</p>
                 <ul>
                   <li v-for="order in missingOrders" :key="order.id" class="text-red-600 font-semibold">

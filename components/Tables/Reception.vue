@@ -1,7 +1,7 @@
 <template>
 <vue-good-table
     :columns="columns"
-    :rows="processedOrders"
+    :rows="missingOrders"
     :line-numbers="true"
     theme="polar-bear"
     styleClass="vgt-table"
@@ -44,44 +44,49 @@ import 'vue-good-table/dist/vue-good-table.css'
 import { VueGoodTable } from 'vue-good-table';
 
 export default {
-    components: {
-        VueGoodTable,
-    },
-    data() {
-        return {
-        columns: [
-            {
-                label: 'Трек код | 跟踪代码',
-                field: 'track_code',
-                tdClass: 'vgt-center-align',
-                thClass: 'vgt-center-align',
-            },
-            {
-                label: 'Статус | 地位',
-                field: 'status.name',
-                type: 'string',
-                tdClass: 'vgt-center-align',
-                thClass: 'vgt-center-align',
-            },
-        ],
-        processedOrders: [],
-        };
-    },
-    methods: {
-        processOrders(response) {
-            console.log('Response data:', response);
-
-            this.processedOrders = response.boxes.map(box => {
-            console.log('Processing box:', box);
-
-            return {
-                ...box,
-                missing_orders: box.missing_orders || [],
-            };
-            });
-
-            console.log('Processed Orders:', this.processedOrders);
+  components: {
+    VueGoodTable,
+  },
+  data() {
+    return {
+      loading: false,
+      columns: [
+      {
+            label: 'Трек код | 跟踪代码',
+            field: 'track_code',
+            tdClass: 'vgt-center-align',
+            thClass: 'vgt-center-align',
         },
+        {
+            label: 'Статус | 地位',
+            field: 'status.name',
+            type: 'string',
+            tdClass: 'vgt-center-align',
+            thClass: 'vgt-center-align',
+        },
+      ],
+      missingOrders: [],
+    };
+  },
+  methods: {
+    processOrders(response) {
+      console.log('Response data:', response);
+
+      this.missingOrders = response.boxes.map(box => {
+        console.log('Processing box:', box);
+
+        return {
+          track_code: box.track_code || '—', // Assuming you want to show track_code in the table
+          missing_orders: box.missing_orders || [],
+        };
+      });
+
+      console.log('Processed Orders:', this.missingOrders);
     },
+  },
+  mounted() {
+    // Fetch and process data as needed
+    console.log('Component mounted, initial data boxes ', this.missingOrders);
+  },
 };
 </script>
