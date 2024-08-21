@@ -73,7 +73,9 @@
                 id="find-boxes"
               >
                 <p class="mb-2.5 block">
-                  Трек код Товара | 产品追踪码<span class="text-red-600">*</span>
+                  Трек код Товара | 产品追踪码<span class="text-red-600"
+                    >*</span
+                  >
                 </p>
               </label>
               <Multiselect
@@ -102,16 +104,17 @@
             </div>
             <modal name="missing-orders-modal" height="auto" width="800">
               <div class="p-8">
-                <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены в коробке!</h2>
-                <p>Отсутствующие заказы:</p>
-                <ul>
-                  <li v-for="order in missingOrders" :key="order.id" class="text-red-600 font-semibold">
-                    {{ order.track_code }}
-                  </li>
-                </ul>
+                <h2 class="text-xl font-bold text-gray-700 mb-4">
+                  Не все заказы найдены в коробке!
+                </h2>
                 <TablesReception :boxes="missingOrders" />
                 <div class="flex justify-items-end">
-                  <button @click="$modal.hide('missing-orders-modal')" class="mt-4 d-btn d-btn-primary">Сохранить</button>
+                  <button
+                    @click="$modal.hide('missing-orders-modal')"
+                    class="mt-4 d-btn d-btn-primary"
+                  >
+                    Сохранить
+                  </button>
                 </div>
               </div>
             </modal>
@@ -126,14 +129,13 @@
     </div>
     <TablesBoxes :boxes="dump_boxes" :loading="loading" :isAction="isAction" />
   </div>
-  
 </template>
 
 <script>
 import Multiselect from "vue-multiselect";
-import Vue from 'vue';
-import VModal from 'vue-js-modal';
-import Reception from '@/components/Tables/Reception.vue'; // Verify this path
+import Vue from "vue";
+import VModal from "vue-js-modal";
+import Reception from "@/components/Tables/Reception.vue"; // Verify this path
 
 Vue.use(VModal, {
   dynamicDefaults: {
@@ -193,7 +195,7 @@ export default {
           this.boxes = res.data.boxes;
         });
     },
-    
+
     save() {
       if (this.reception.status) {
         this.reception.status_id = this.reception.status.id;
@@ -219,10 +221,10 @@ export default {
         })
         .catch((err) => {
           this.missingOrders = err.response.data.missing_orders;
-          this.$modal.show('missing-orders-modal');
+          this.$modal.show("missing-orders-modal");
         });
     },
-    
+
     selectBoxes(value) {
       value[0].orders.forEach((item) => {
         this.orders.push(item);
@@ -230,12 +232,12 @@ export default {
       this.$store.commit("dummy/SET_CREATE_BOXES", this.dump_boxes);
       this.reception.boxes = this.dump_boxes.map((o) => o.id);
     },
-    
+
     selectOrders(value) {
-      this.reception.orders = value.map(order => {
+      this.reception.orders = value.map((order) => {
         return {
           id: order.id,
-          status_id: 4
+          status_id: 4,
         };
       });
       this.$store.commit("dummy/SET_CREATE_RECEPTIONS", this.reception.orders);
