@@ -100,16 +100,20 @@
                 classList="rounded bg-bo-primary text-center text-white py-3 px-7 mt-3 w-full md:w-max hover:bg-bo-primary"
               />
             </div>
-            <modal name="missing-orders-modal" height="auto">
-              <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены!</h2>
-              <p>Отсутствующие заказы:</p>
-              <ul>
-                <li v-for="order in missingOrders" :key="order.id" class="text-red-600 font-semibold">
-                  {{ order.track_code }}
-                </li>
-              </ul>
-              <Reception />
-              <button @click="$modal.hide('missing-orders-modal')" class="mt-4 d-btn d-btn-primary">Закрыть</button>
+            <modal name="missing-orders-modal" height="auto" width="800">
+              <div class="p-8">
+                <h2 class="text-xl font-bold text-gray-700 mb-4">Не все заказы найдены!</h2>
+                <p>Отсутствующие заказы:</p>
+                <ul>
+                  <li v-for="order in missingOrders" :key="order.id" class="text-red-600 font-semibold">
+                    {{ order.track_code }}
+                  </li>
+                </ul>
+                <TablesReception :boxes="missingOrders" />
+                <div class="flex justify-items-end">
+                  <button @click="$modal.hide('missing-orders-modal')" class="mt-4 d-btn d-btn-primary">Сохранить</button>
+                </div>
+              </div>
             </modal>
           </div>
         </form>
