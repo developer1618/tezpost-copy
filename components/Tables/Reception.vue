@@ -26,12 +26,12 @@
       </span>
       <div v-if="props.column.field === 'orders_status'">
         <select
-          v-model="statusId"
+          :value="props.row.status_id"
+          @change="$emit('updateStatus', +$event.target.value, props.row.id)"
           class="rounded-md py-1 px-2"
           :class="{
-            'bg-green-100 text-green-800':
-              props.row.orders_status === 'Прием в Душанбе',
-            'bg-red-100 text-red-800': props.row.orders_status === 'Пропал',
+            'bg-green-100 text-green-800': props.row.orders_status === 4,
+            'bg-red-100 text-red-800': props.row.orders_status === 20,
             'bg-gray-100 text-gray-800': !props.row.orders_status,
           }"
         >
@@ -68,7 +68,6 @@ export default {
   data() {
     return {
       loading: false,
-      statusId: 4,
       columns: [
         {
           label: "Трек-код товара | 跟踪代码",
@@ -86,11 +85,7 @@ export default {
     };
   },
 
-  watch: {
-    statusId() {
-      this.$emit("updateStatus", this.statusId);
-    },
-  },
+  methods: {},
 };
 </script>
 

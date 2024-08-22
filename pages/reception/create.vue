@@ -206,7 +206,10 @@ export default {
         this.reception.boxes = this.hasBoxes.map((o) => o.id);
       }
       this.$axios
-        .post("/dashboard/reception", this.reception)
+        .post("/dashboard/reception", {
+          ...this.reception,
+          missing_orders: this.missingOrders,
+        })
         .then((res) => {
           this.$swal({
             icon: "success",
@@ -223,12 +226,18 @@ export default {
         })
         .catch((err) => {
           this.missingOrders = err.response.data.missing_orders;
+          this.missingOrders.forEach((item) => {
+            item.status_id = 4;
+          });
           this.$modal.show("missing-orders-modal");
         });
     },
 
-    onUpdateStatus(statusId) {
-      this.reception.status_id = statusId;
+    onUpdateStatus(statusId, missingOrderId) {
+      const index = this.missingOrders.findIndex(
+        ({ id }) => id === missingOrderId
+      );
+      this.missingOrders[index].status_id = statusId;
     },
 
     selectBoxes(value) {
