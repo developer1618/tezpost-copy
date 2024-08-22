@@ -102,32 +102,29 @@
                 classList="rounded bg-bo-primary text-center text-white py-3 px-7 mt-3 w-full md:w-max hover:bg-bo-primary"
               />
             </div>
-            <modal
-              name="missing-orders-modal"
-              height="auto"
-              width="800"
-              class="overflow-auto h-96"
-            >
-              <div class="p-8">
-                <h2 class="text-xl font-bold text-gray-700 mb-4">
-                  Не все заказы найдены в коробке!
-                </h2>
-                <TablesReception
-                  @updateStatus="onUpdateStatus"
-                  :boxes="missingOrders"
-                />
-                <div class="flex justify-items-end">
-                  <button
-                    @click="$modal.hide('missing-orders-modal')"
-                    class="mt-4 d-btn d-btn-primary"
-                  >
-                    Сохранить
-                  </button>
-                </div>
-              </div>
-            </modal>
           </div>
         </form>
+        <modal
+          name="missing-orders-modal"
+          height="auto"
+          width="800"
+          class="overflow-auto h-96"
+        >
+          <div class="p-8">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">
+              Не все заказы найдены в коробке!
+            </h2>
+            <TablesReception
+              @updateStatus="onUpdateStatus"
+              :boxes="missingOrders"
+            />
+            <div class="flex justify-items-end">
+              <button @click="handleModal" class="mt-4 d-btn d-btn-primary">
+                Сохранить
+              </button>
+            </div>
+          </div>
+        </modal>
       </div>
     </div>
     <div class="my-8">
@@ -250,6 +247,11 @@ export default {
         };
       });
       this.$store.commit("dummy/SET_CREATE_RECEPTIONS", this.reception.orders);
+    },
+
+    handleModal() {
+      this.$modal.hide("missing-orders-modal");
+      this.save();
     },
   },
 };
