@@ -102,12 +102,20 @@
                 classList="rounded bg-bo-primary text-center text-white py-3 px-7 mt-3 w-full md:w-max hover:bg-bo-primary"
               />
             </div>
-            <modal name="missing-orders-modal" height="auto" width="800" class="overflow-auto h-96">
+            <modal
+              name="missing-orders-modal"
+              height="auto"
+              width="800"
+              class="overflow-auto h-96"
+            >
               <div class="p-8">
                 <h2 class="text-xl font-bold text-gray-700 mb-4">
                   Не все заказы найдены в коробке!
                 </h2>
-                <TablesReception :boxes="missingOrders" />
+                <TablesReception
+                  @updateStatus="onUpdateStatus"
+                  :boxes="missingOrders"
+                />
                 <div class="flex justify-items-end">
                   <button
                     @click="$modal.hide('missing-orders-modal')"
@@ -197,9 +205,6 @@ export default {
     },
 
     save() {
-      if (this.reception.status) {
-        this.reception.status_id = this.reception.status.id;
-      }
       if (this.hasBoxes.length != 0) {
         this.reception.boxes = this.hasBoxes.map((o) => o.id);
       }
@@ -223,6 +228,10 @@ export default {
           this.missingOrders = err.response.data.missing_orders;
           this.$modal.show("missing-orders-modal");
         });
+    },
+
+    onUpdateStatus(statusId) {
+      this.reception.status_id = statusId;
     },
 
     selectBoxes(value) {
