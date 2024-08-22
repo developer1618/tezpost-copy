@@ -102,7 +102,7 @@
                 classList="rounded bg-bo-primary text-center text-white py-3 px-7 mt-3 w-full md:w-max hover:bg-bo-primary"
               />
             </div>
-            <modal name="missing-orders-modal" height="auto" width="800">
+            <modal name="missing-orders-modal" height="auto" width="800" class="overflow-auto h-96">
               <div class="p-8">
                 <h2 class="text-xl font-bold text-gray-700 mb-4">
                   Не все заказы найдены в коробке!
