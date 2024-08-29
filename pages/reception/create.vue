@@ -185,8 +185,12 @@ export default {
       return this.$store.state.dummy.create_boxes;
     },
     filteredMissingOrders() {
-      const selectedTrackCodes = this.dump_orders.map(order => order.track_code);
-      return this.missingOrders.filter(order => !selectedTrackCodes.includes(order.track_code));
+      const selectedTrackCodes = this.dump_orders.map(
+        (order) => order.track_code
+      );
+      return this.missingOrders.filter(
+        (order) => !selectedTrackCodes.includes(order.track_code)
+      );
     },
   },
 
@@ -247,7 +251,8 @@ export default {
       const index = this.missingOrders.findIndex(
         ({ id }) => id === missingOrderId
       );
-      this.missingOrders[index].status_id = statusId;
+
+      this.$set(this.missingOrders[index], "status_id", statusId);
     },
 
     selectBoxes(value) {
