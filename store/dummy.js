@@ -1,6 +1,7 @@
 export const state = () => ({
     create_boxes: [],
     create_sends: [],
+    create_sortings: [],
     create_receptions: [],
     return_boxes: [],
     return_orders: [],
@@ -13,6 +14,9 @@ export const mutations = {
     },
     SET_CREATE_SENDS(state, data) {
         state.create_sends = data
+    },
+    SET_CREATE_SORTINGS(state, data) {
+        state.create_sortings = data
     },
     SET_CREATE_RECEPTIONS(state, data) {
         state.create_receptions = data

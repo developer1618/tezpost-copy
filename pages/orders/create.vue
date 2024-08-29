@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between w-full">
         <div class="">
           <h2 class="md:text-4xl text-2xl font-bold text-gray-700 mb-2.5">
-            Прием заказа |  添加
+            添加
           </h2>
           <span class="text-gray-800">Процес добавление товара | 产品添加流程.</span>
         </div>
@@ -212,16 +212,16 @@
 
           <div class="w-full lg:w-1/3 md:w-1/2 md:px-3 py-2">
             <label class="block text-sm font-medium text-gray-700">
-              Номер телефона | 电话号码 <span class="text-red-600">*</span>
+              Телефон | 电话 
             </label>
             <div class="mt-1 flex">
               <input
                   v-model="order.phone"
                   type="tel"
-                  required=""
-                  maxlength="5"
+                  maxlength="9"
+                  :disabled="boxes_mode"
                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                  class="form-control"
+                  class="form-control disabled:bg-gray-300"
               />
             </div>
           </div>
@@ -313,6 +313,7 @@ export default {
         status_id: 1,
         status: '',
         image: null,
+        phone: null,
       },
       loading: false,
       disabled: false,
@@ -405,6 +406,7 @@ export default {
       formData.append('direction_id', this.order.direction_id);
       formData.append('boxes', this.order.boxes);
       formData.append('status_id', this.order.status_id);
+      formData.append('phone', this.order.phone);
       formData.append('status', JSON.stringify(this.order.status));
 
       if (this.image) {

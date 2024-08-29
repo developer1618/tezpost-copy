@@ -1,7 +1,5 @@
-
 let development = process.env.NODE_ENV !== 'production'
-// let baseUrl = development ? 'http://127.0.0.1:8000' : 'http://apitezpost.tw1.ru'
-let baseUrl = development ? 'https://test-api.tezpost.ru' : 'https://test-api.tezpost.ru'
+let baseUrl = development ? 'https://test-api.tezpost.ru' : 'https://api.tezpost.ru'
 
 
 export default {
@@ -31,7 +29,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
+    { src: '~/plugins/vue-js-modal.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

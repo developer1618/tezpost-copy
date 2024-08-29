@@ -11,7 +11,7 @@
           >
         </div>
         <div class="flex">
-          <nuxt-link to="/sends" class="d-btn d-btn-primary">
+          <nuxt-link to="/sortings" class="d-btn d-btn-primary">
             <svg
               class="stroke-current text-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
               </label>
               <div class="mt-1">
                 <input
-                  v-model="send.name"
+                  v-model="sorting.name"
                   type="text"
                   placeholder="Введите название"
                   required=""
@@ -106,9 +106,9 @@ export default {
 
   data() {
     return {
-      send: {
+      sorting: {
         name: "",
-        send: "",
+        sorting: "",
         box_id: "",
         boxes: [],
       },
@@ -126,26 +126,26 @@ export default {
   methods: {
     init() {
       this.$axios
-        .get(`/dashboard/get-data?send_statuses=1&boxes=9`)
+        .get(`/dashboard/get-data?sorting_statuses=1&boxes=9`)
         .then((res) => {
-          this.statuses = res.data.send_statuses;
+          this.statuses = res.data.sorting_statuses;
           this.boxes = res.data.boxes;
           this.$axios
-            .get(`/dashboard/sends/${this.$route.params.id}`)
+            .get(`/dashboard/sortings/${this.$route.params.id}`)
             .then((res) => {
-              this.send = res.data.send;
+              this.sorting = res.data.sorting;
               this.dump_boxes = res.data.boxes;
-              if (this.send.status_id == 13) this.boxes = this.send.boxes;
+              if (this.sorting.status_id == 13) this.boxes = this.sorting.boxes;
             });
         });
     },
     save() {
-      if (this.send.status) {
-        this.send.status_id = this.send.status.id;
+      if (this.sorting.status) {
+        this.sorting.status_id = this.sorting.status.id;
       }
-      if (this.send.status_id == 8)
+      if (this.sorting.status_id == 8)
         this.$axios
-          .put(`/dashboard/sends/${this.$route.params.id}`, this.send)
+          .put(`/dashboard/sortings/${this.$route.params.id}`, this.sorting)
           .then((res) => {
             this.$swal({
               icon: "success",
@@ -155,7 +155,7 @@ export default {
               timerProgressBar: true,
             }).then((res) => {
               this.$router.push({
-                path: "/sends",
+                path: "/sortings",
               });
             });
           })
@@ -170,7 +170,7 @@ export default {
           });
     },
     selectBoxes() {
-      this.send.boxes = this.dump_boxes.map((o) => o.id);
+      this.sorting.boxes = this.dump_boxes.map((o) => o.id);
     },
   },
 };

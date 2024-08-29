@@ -112,11 +112,12 @@
         >
           <div class="p-8">
             <h2 class="text-xl font-bold text-gray-700 mb-4">
-              Не все заказы найдены в коробке!
+              {{ modalMessage }}
             </h2>
             <TablesReception
+              v-if="filteredMissingOrders.length > 0"
               @updateStatus="onUpdateStatus"
-              :boxes="missingOrders"
+              :boxes="filteredMissingOrders"
             />
             <div class="flex justify-items-end">
               <button @click="handleModal" class="mt-4 d-btn d-btn-primary">
@@ -152,7 +153,7 @@ Vue.use(VModal, {
 export default {
   components: {
     Multiselect,
-    Reception, // Register the Reception component
+    Reception,
   },
 
   data() {
@@ -175,8 +176,17 @@ export default {
   },
 
   computed: {
+    modalMessage() {
+      return this.filteredMissingOrders.length > 0
+        ? "Не все заказы найдены в коробке!"
+        : "Успешно добавлено";
+    },
     hasBoxes() {
       return this.$store.state.dummy.create_boxes;
+    },
+    filteredMissingOrders() {
+      const selectedTrackCodes = this.dump_orders.map(order => order.track_code);
+      return this.missingOrders.filter(order => !selectedTrackCodes.includes(order.track_code));
     },
   },
 
@@ -208,7 +218,7 @@ export default {
       this.$axios
         .post("/dashboard/reception", {
           ...this.reception,
-          missing_orders: this.missingOrders,
+          orders: this.missingOrders,
         })
         .then((res) => {
           this.$swal({
@@ -227,7 +237,7 @@ export default {
         .catch((err) => {
           this.missingOrders = err.response.data.missing_orders;
           this.missingOrders.forEach((item) => {
-            item.status_id = 4;
+            item.status_id = 20;
           });
           this.$modal.show("missing-orders-modal");
         });

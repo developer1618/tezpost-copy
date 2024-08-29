@@ -11,7 +11,10 @@
           >
         </div>
         <div class="flex">
-          <span onclick="history.back()" class="cursor-pointer d-btn d-btn-primary">
+          <span
+            onclick="history.back()"
+            class="cursor-pointer d-btn d-btn-primary"
+          >
             <svg
               class="stroke-current text-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +44,27 @@
               id="find-boxes"
             >
               <p class="mb-2.5 block">
-                Трек код товара | 追踪产品代码<span class="text-red-600">*</span>
+                Трек код товара | 追踪产品代码<span class="text-red-600"
+                  >*</span
+                >
               </p>
             </label>
-            
-              <Multiselect placeholder="Добавьте товары в упаковку | 将物品添加到包装中" tag-placeholder="Выберите товары | 选择产品" label="track_code" track-by="id" v-model="dump_orders" :closeOnSelect="false" :hideSelected="true" :searchable="true" :options="orders" :multiple="true" :taggable="true" @input="selectOrders" />
 
+            <Multiselect
+              placeholder="Добавьте товары в упаковку | 将物品添加到包装中"
+              tag-placeholder="Выберите товары | 选择产品"
+              label="track_code"
+              track-by="id"
+              v-model="dump_orders"
+              :closeOnSelect="false"
+              :hideSelected="true"
+              :loading="true"
+              :searchable="true"
+              :options="orders"
+              :multiple="true"
+              :taggable="true"
+              @input="selectOrders"
+            />
           </div>
           <div class="md:px-3 w-full">
             <d-button
@@ -73,7 +91,7 @@
 </template>
 
 <script>
-import Multiselect from 'vue-multiselect'
+import Multiselect from "vue-multiselect";
 
 export default {
   components: {
@@ -82,54 +100,54 @@ export default {
   data() {
     return {
       box: {
-        status: '',
+        status: "",
         status_id: 8,
-        orders: []
+        orders: [],
       },
       dump_orders: [],
       loading: false,
       disabled: false,
       orders: [],
-      isAction: 1
+      isAction: 1,
     };
   },
   computed: {
     hasBox() {
-      return this.$store.state.dummy.create_boxes 
-    }
+      return this.$store.state.dummy.create_boxes;
+    },
   },
   mounted() {
-    this.init()
+    this.init();
   },
   methods: {
     init() {
-      if(this.hasBox.length != 0) {
-        this.dump_orders = this.hasBox
+      if (this.hasBox.length != 0) {
+        this.dump_orders = this.hasBox;
       }
-        
+
       this.$axios
-      .get("/dashboard/get-data", {
-        params: {
-          type: ["orders"],
-          statuses: [1,5],
-          isPagination: 0
-        },
-      })
-      .then((res) => {
-        this.orders = res.data.orders;
-      })
+        .get("/dashboard/get-data", {
+          params: {
+            type: ["orders"],
+            statuses: [1, 5],
+            isPagination: 0,
+          },
+        })
+        .then((res) => {
+          this.orders = res.data.orders;
+        });
     },
     save() {
       if (this.box.status) {
         this.box.status_id = this.box.status.id;
       }
-      if(this.hasBox != 0) {
-        this.box.orders = this.hasBox.map(o => o.id)
+      if (this.hasBox != 0) {
+        this.box.orders = this.hasBox.map((o) => o.id);
       }
       this.$axios
         .post("/dashboard/boxes", this.box)
         .then((res) => {
-          this.$store.dispatch('createBox', [])
+          this.$store.dispatch("createBox", []);
           this.$swal({
             icon: "success",
             title: "Успешно",
@@ -137,7 +155,7 @@ export default {
             timer: 2000,
             timerProgressBar: true,
           }).then((res) => {
-            this.$store.commit('dummy/SET_CREATE_BOXES', [])
+            this.$store.commit("dummy/SET_CREATE_BOXES", []);
             this.$router.push({
               path: "/boxes",
             });
@@ -154,9 +172,9 @@ export default {
         });
     },
     selectOrders() {
-      this.$store.commit('dummy/SET_CREATE_BOXES', this.dump_orders)
-      this.box.orders = this.dump_orders.map(o => o.id)
-    }
+      this.$store.commit("dummy/SET_CREATE_BOXES", this.dump_orders);
+      this.box.orders = this.dump_orders.map((o) => o.id);
+    },
   },
 };
 </script>

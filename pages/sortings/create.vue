@@ -42,22 +42,24 @@
           <div>
             <div class="w-1/2 md:px-3 py-2">
               <label class="block text-sm font-medium text-gray-700">
-                Название | 后退 <span class="text-red-600">*</span>
+                Номер телефон | 电话号码 <span class="text-red-600">*</span>
               </label>
               <div class="mt-1">
                 <input
-                  v-model="send.name"
-                  type="text"
-                  placeholder="Введите название | 输入标题"
+                  v-model="sortings.phone"
+                  type="tel"
+                  placeholder="Введите номер телефон | 输入电话号码"
                   required=""
-                  class="form-control"
+                  maxlength="9"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  class="form-control disabled:bg-gray-300"
                 />
               </div>
             </div>
             <div class="w-1/2 md:px-3 py-2">
               <label
                 class="block text-sm font-medium text-gray-700"
-                id="find-boxes"
+                id="find-orders"
               >
                 <p class="mb-2.5 block">
                   Трек код Упаковки | 跟踪代码包装<span class="text-red-600"
@@ -68,18 +70,19 @@
               <Multiselect
                 placeholder="Добавьте упаковки в отправку | 将包裹添加到您的货件中"
                 tag-placeholder="Выберите упаковки | 选择包装"
-                label="name"
+                label="track_code"
                 track-by="id"
-                v-model="dump_boxes"
+                v-model="dump_orders"
                 :closeOnSelect="false"
                 :hideSelected="true"
                 :loading="true"
                 :searchable="true"
-                :options="boxes"
+                :options="orders"
                 :multiple="true"
                 :taggable="true"
                 @input="selectBoxes"
               />
+              
             </div>
           </div>
           <div class="md:px-3 w-full">
@@ -98,7 +101,7 @@
         Просмотр содержимого | 查看内容
       </h2>
     </div>
-    <TablesBoxes :boxes="dump_boxes" :loading="loading" :isAction="isAction" />
+    <TablesBoxes :orders="dump_orders" :loading="loading" :isAction="isAction" />
   </div>
 </template>
 
@@ -112,23 +115,26 @@ export default {
 
   data() {
     return {
-      send: {
-        name: "",
+      sortings: {
         status: "",
-        status_id: 12,
-        boxes: [],
+        status_id: 21,
+        orders: [],
+        track_code: null,
+        cost_china: 0,
+        direction_id: this.$auth.user.direction_id,
+        boxes: 1,
+        phone: null,
       },
-      dump_boxes: [],
+      dump_orders: [],
       isAction: true,
       loading: false,
       disabled: false,
-      statuses: [],
-      boxes: [],
+      orders: [],
     };
   },
   computed: {
-    hasSend() {
-      return this.$store.state.dummy.create_sends;
+    hasSorting() {
+      return this.$store.state.dummy.create_sortings;
     },
   },
   mounted() {
@@ -136,56 +142,58 @@ export default {
   },
   methods: {
     init() {
-      if (this.hasSend.length != 0) {
-        this.dump_boxes = this.hasSend;
+      if (this.hasSorting.length != 0) {
+        this.dump_orders = this.hasSorting;
       }
       this.$axios
-        .get("/dashboard/get-data?boxes=8", {
+        .get("/dashboard/get-data", {
           params: {
-            type: ["boxes"],
-            statuses: [8, 11],
+            type: ["orders"],
+            statuses: [4],
+            isPagination: 0,
           },
         })
         .then((res) => {
-          this.boxes = res.data.boxes;
+          this.orders = res.data.orders;
         });
     },
     save() {
-      if (this.send.status) {
-        this.send.status_id = this.send.status.id;
-      }
-      if (this.hasSend.length != 0) {
-        this.send.boxes = this.hasSend.map((o) => o.id);
-      }
-      this.$axios
-        .post("/dashboard/sends", this.send)
-        .then((res) => {
-          this.$swal({
-            icon: "success",
-            title: "Успешно",
-            text: res.message,
-            timer: 2000,
-            timerProgressBar: true,
-          }).then((res) => {
-            this.$store.commit("dummy/SET_CREATE_SENDS", []);
-            this.$router.push({
-              path: "/sends",
-            });
-          });
-        })
-        .catch((err) => {
-          this.$swal({
-            icon: "erros",
-            title: "Ошибка",
-            text: err.response.data[Object.keys(err.response.data)[0]][0],
-            timer: 2000,
-            timerProgressBar: true,
-          });
+  if (this.sortings.status) {
+    this.sortings.status_id = this.sortings.status.id;
+  }
+  if (this.hasSorting.length != 0) {
+    this.sortings.orders = this.hasSorting.map((o) => o.id);
+  }
+  this.$axios
+    .post("/dashboard/sortings", this.sortings)
+    .then((res) => {
+      this.$swal({
+        icon: "success",
+        title: "Успешно",
+        text: res.message,
+        timer: 2000,
+        timerProgressBar: true,
+      }).then((res) => {
+        this.dump_orders = [];
+        this.$store.commit("dummy/SET_CREATE_SORTING", []);
+        this.$router.push({
+          path: "/sortings/create",
         });
-    },
+      });
+    })
+    .catch((err) => {
+      this.$swal({
+        icon: "error",
+        title: "Ошибка",
+        text: err.response.data[Object.keys(err.response.data)[0]][0],
+        timer: 2000,
+        timerProgressBar: true,
+      });
+    });
+  },
     selectBoxes() {
-      this.$store.commit("dummy/SET_CREATE_SENDS", this.dump_boxes);
-      this.send.boxes = this.dump_boxes.map((o) => o.id);
+      this.$store.commit("dummy/SET_CREATE_SORTINGS", this.dump_orders);
+      this.sortings.orders = this.dump_orders.map((o) => o.id);
     },
   },
 };
